@@ -17,6 +17,7 @@ def calc_word_value(load):
             wordNum += LETTER_SCORES[letter]
         wordValues[word] = wordNum
     return wordValues
+    print("Hello")
 
 print(calc_word_value(load_words()))
 
