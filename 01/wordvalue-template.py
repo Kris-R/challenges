@@ -8,12 +8,15 @@ def load_words():
 print(load_words())
 
 def calc_word_value(load):
-    """Calculate the value of the word entered into function
-    using imported constant mapping LETTER_SCORES"""
+    """Calculate the value of the words fund in the data.py dictionary.txt, stores
+    those values as key-value pairs to a new dict"""
     wordValues = {}
     for word in load:
-        for letter in word.split():
-            print(letter)
+        wordNum = 0
+        for letter in word:
+            wordNum += LETTER_SCORES[letter]
+        wordValues[word] = wordNum
+    return wordValues
 
 print(calc_word_value(load_words()))
 
