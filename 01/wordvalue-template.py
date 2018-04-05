@@ -26,13 +26,14 @@ def max_word_value(input=DICTIONARY):
 
     if isinstance(input, list):
         print("it's a list")
-    elif isinstance(input, dict):
-        print("it's a dict")
+    elif isinstance(input, str):
+        print("it's a string")
 
+    print("max word value called", input)
         # create a re-usable function to calculate word values
 
 max_word_value()
-type(DICTIONARY)
+print(type(DICTIONARY))
 
 if __name__ == "__main__":
     pass # run unittests to validate
