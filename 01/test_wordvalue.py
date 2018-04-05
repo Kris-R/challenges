@@ -21,3 +21,5 @@ newList = list("Hello")
 print(newList)
 
 help(isinstance)
+
+print(isinstance(newList, list))

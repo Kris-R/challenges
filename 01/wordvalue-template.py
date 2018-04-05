@@ -29,10 +29,10 @@ def max_word_value(input=DICTIONARY):
     Will test whether it's there or not, then run the calculations on word value
     See test_wordvalue.py"""
 
-    if input == type(list)
-
+    if isinstance(input, list):
+        # calculate from list
     else:
-        # use the dictionary in a calculating function/
+        # use the dictionary in a calculating function
 
 
 
