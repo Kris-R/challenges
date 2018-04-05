@@ -17,9 +17,7 @@
 # if __name__ == "__main__":
 #     pass # run unittests to validate
 
-newList = list("Hello")
-print(newList)
+newDict = {}
 
-help(isinstance)
-
-print(isinstance(newList, list))
+print(isinstance(newDict, dict))
+print(type(newDict))
