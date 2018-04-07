@@ -17,7 +17,7 @@
 # if __name__ == "__main__":
 #     pass # run unittests to validate
 
-newDict = {}
-
-print(isinstance(newDict, dict))
-print(type(newDict))
+newList = ["hello", "from", "the", "other", "side"]
+print(newList)
+for item in newList:
+    print(item)
