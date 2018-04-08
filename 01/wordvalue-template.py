@@ -5,8 +5,6 @@ def load_words():
     dictAsList = [i.upper().rstrip() for i in open(DICTIONARY)]
     return dictAsList
 
-print(load_words())
-
 def calc_word_value(load=DICTIONARY):
     """Calculate the value of the words found in the data.py __dictionary.txt__, stores
     those values as key-value pairs to a new dict"""
@@ -18,8 +16,6 @@ def calc_word_value(load=DICTIONARY):
             wordNum += LETTER_SCORES[letter]
         wordValues[word] = wordNum
     return wordValues
-
-print(calc_word_value())
 
 def max_word_value(input=DICTIONARY):
     """Calculate the word with the max value, can receive a list
@@ -52,9 +48,8 @@ def max_word_value(input=DICTIONARY):
                 max_word = word
         return max_word, max_value
 
-
-print(max_word_value())
-print(max_word_value(load_words()))
-
 if __name__ == "__main__":
-    pass # run unittests to validate
+    print(load_words())
+    print(calc_word_value())
+    print(max_word_value())
+    print(max_word_value(load_words()))
