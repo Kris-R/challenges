@@ -14,8 +14,8 @@ def get_tags():
     """Find all tags (TAG_HTML) in RSS_FEED.
     Replace dash with whitespace.
     Hint: use TAG_HTML.findall"""
-    text = open()
-    TAG_HTML.findall()
+
+
 
 
 def get_top_tags(tags):
