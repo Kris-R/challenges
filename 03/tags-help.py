@@ -2,6 +2,9 @@ from collections import Counter
 from difflib import SequenceMatcher
 from itertools import product
 import re
+import xml.etree.ElementTree as ET
+
+
 
 IDENTICAL = 1.0
 TOP_NUMBER = 10
@@ -14,9 +17,9 @@ def get_tags():
     """Find all tags (TAG_HTML) in RSS_FEED.
     Replace dash with whitespace.
     Hint: use TAG_HTML.findall"""
-
-
-
+    tree = ET.parse(RSS_FEED)
+    root = tree.getroot()
+    print(len(root[0]))
 
 def get_top_tags(tags):
     """Get the TOP_NUMBER of most common tags
