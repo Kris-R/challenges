@@ -19,7 +19,10 @@ def get_tags():
     Hint: use TAG_HTML.findall"""
     tree = ET.parse(RSS_FEED)
     root = tree.getroot()
-    print(len(root[0]))
+    help(root)
+    for elem in root:
+        for subelem in elem:
+            print(subelem.items())
 
 def get_top_tags(tags):
     """Get the TOP_NUMBER of most common tags
