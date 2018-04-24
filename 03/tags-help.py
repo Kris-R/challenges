@@ -18,9 +18,9 @@ def get_tags():
     Replace dash with whitespace.
     Hint: use TAG_HTML.findall"""
     tree = ET.parse(RSS_FEED)
-    root = tree.getroot()
-    for node in tree.iter():
-        print(node.tag, node.text, node.attrib)
+    listOfCatNodes = [nodes.text for nodes in tree.iter("category")]
+    print(listOfCatNodes)
+    help(tree)
 
 def get_top_tags(tags):
     """Get the TOP_NUMBER of most common tags
