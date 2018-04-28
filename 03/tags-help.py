@@ -18,14 +18,31 @@ def get_tags():
     Replace dash with whitespace.
     Hint: use TAG_HTML.findall"""
     tree = ET.parse(RSS_FEED)
-    listOfCatNodes = [nodes.text for nodes in tree.iter("category") if re.search(r'-', nodes.text)]
-    print(listOfCatNodes)
+    allCategories = []
+
+    for nodes in tree.iter("category"):
+        if re.search(r'-', nodes.text):
+            nodes.text = re.sub(r'-', ' ', nodes.text)
+            print(nodes.text)
+            allCategories.append(nodes.text)
+        else:
+            allCategories.append(nodes.text)
+    print(allCategories)
+    return allCategories, tree
+
+    # Check to see whether elements have been changed:
+    #
+    # for nodes in tree.iter("category"):
+    #     if re.search(r'-', nodes.text):
+    #         print(">>>>", nodes.text)
+    #     else:
+    #         print("c", nodes.text) # 'c' for correct
+
 
 def get_top_tags(tags):
     """Get the TOP_NUMBER of most common tags
     Hint: use most_common method of Counter (already imported)"""
-    pass
-
+    # help(Counter.most_common)
 
 def get_similarities(tags):
     """Find set of tags pairs with similarity ratio of > SIMILAR
