@@ -4,8 +4,6 @@ from itertools import product
 import re
 import xml.etree.ElementTree as ET
 
-
-
 IDENTICAL = 1.0
 TOP_NUMBER = 10
 RSS_FEED = 'rss.xml'
@@ -23,11 +21,9 @@ def get_tags():
     for nodes in tree.iter("category"):
         if re.search(r'-', nodes.text):
             nodes.text = re.sub(r'-', ' ', nodes.text)
-            print(nodes.text)
             allCategories.append(nodes.text)
         else:
             allCategories.append(nodes.text)
-    print(allCategories)
     return allCategories, tree
 
     # Check to see whether elements have been changed:
@@ -42,7 +38,8 @@ def get_tags():
 def get_top_tags(tags):
     """Get the TOP_NUMBER of most common tags
     Hint: use most_common method of Counter (already imported)"""
-    # help(Counter.most_common)
+    return Counter(tags[0]).most_common(TOP_NUMBER)
+
 
 def get_similarities(tags):
     """Find set of tags pairs with similarity ratio of > SIMILAR
