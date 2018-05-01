@@ -10,11 +10,9 @@ RSS_FEED = 'rss.xml'
 SIMILAR = 0.87
 TAG_HTML = re.compile(r'<category>([^<]+)</category>')
 
-
 def get_tags():
     """Find all tags (TAG_HTML) in RSS_FEED.
-    Replace dash with whitespace.
-    Hint: use TAG_HTML.findall"""
+    Replace dash with whitespace."""
     tree = ET.parse(RSS_FEED)
     allCategories = []
 
@@ -34,20 +32,16 @@ def get_tags():
     #     else:
     #         print("c", nodes.text) # 'c' for correct
 
-
 def get_top_tags(tags):
-    """Get the TOP_NUMBER of most common tags
-    Hint: use most_common method of Counter (already imported)"""
+    """Get the TOP_NUMBER of most common tags"""
     return Counter(tags[0]).most_common(TOP_NUMBER)
-
 
 def get_similarities(tags):
     """Find set of tags pairs with similarity ratio of > SIMILAR
     Hint 1: compare each tag, use for in for, or product from itertools (already imported)
     Hint 2: use SequenceMatcher (imported) to calculate the similarity ratio
     Bonus: for performance gain compare the first char of each tag in pair and continue if not the same"""
-    pass
-
+    help(SequenceMatcher)
 
 if __name__ == "__main__":
     tags = get_tags()
