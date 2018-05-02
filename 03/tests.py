@@ -1,3 +1,3 @@
-RSS_FEED = 'rss.xml'
-fileWithRSS = open(rss.xml, encoding='UTF-8')
-print(fileWithRSS)
+print("hello2")
+print(\t)
+print("hello")

@@ -42,6 +42,8 @@ def get_similarities(tags):
     Hint 2: use SequenceMatcher (imported) to calculate the similarity ratio
     Bonus: for performance gain compare the first char of each tag in pair and continue if not the same"""
     help(SequenceMatcher)
+    s = SequenceMatcher(lambda x: x == " ", "Hello you;", "Smello you;")
+    print(s.ratio())
 
 if __name__ == "__main__":
     tags = get_tags()
