@@ -41,13 +41,16 @@ def get_similarities(tags):
     Hint 1: compare each tag, use for in for, or product from itertools (already imported)
     Hint 2: use SequenceMatcher (imported) to calculate the similarity ratio
     Bonus: for performance gain compare the first char of each tag in pair and continue if not the same"""
+    pairs = []
     for pair in product(tags[0], tags[0]):
-        print(pair)
-        s = SequenceMatcher(lambda x: x == " ", pair[0], pair[1])
+        if pair[0] == pair[1]:
+            pass
+        else:
+            s = SequenceMatcher(lambda x: x == " ", pair[0], pair[1])
             # Creates an object s from the difflib.SequenceMatcher class constructor
-        # if s.ratio() > SIMILAR:
-        #     print(pair)
-
+            if s.ratio() > SIMILAR:
+                pairs.append(pair)
+    return pairs
 
 if __name__ == "__main__":
     tags = get_tags()
